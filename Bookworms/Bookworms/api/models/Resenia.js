@@ -8,7 +8,10 @@
 module.exports = {
 
   attributes: {
-
+    idLibro:{
+      model:'Libro',
+      required:true
+    }
   }
 };
 

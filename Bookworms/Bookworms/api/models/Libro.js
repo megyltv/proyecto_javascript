@@ -8,7 +8,18 @@
 module.exports = {
 
   attributes: {
-
+    resenias:{
+      collection:'Resenia',
+      via:'idLibro'
+    },
+    comentarios:{
+      collection:'Comentario',
+      via:'idLibro'
+    },
+    frases:{
+      collection:'Frases',
+      via:'idLibro'
+    }
   }
 };
 
