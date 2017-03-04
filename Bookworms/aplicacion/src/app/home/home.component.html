@@ -46,19 +46,31 @@
   </div>
 </div>
 <br><br>
-<div class="row text-center" *ngFor="let libro of libros">
-  <button class="btn btn-primary" (click)="libro.formularioCerrado=!libro.formularioCerrado">Mostrar mas</button>
+<div class="container">
+  <div class="row text-center" *ngFor="let libro of libros">
+    <button class="btn btn-primary" (click)="libro.formularioCerrado=!libro.formularioCerrado">Mostrar mas</button>
 
-  <div class="col-sm-12" [hidden]="libro.formularioCerrado" >
-    <br>
-    <div class="col-sm-6">
-      <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+    <div class="col-sm-12" [hidden]="libro.formularioCerrado">
+      <br>
+      <div class="col-sm-6">
+        <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+      </div>
+      <div class="col-sm-6">
+        <p style="text-decoration-style: double">Nombre: {{libro.nombreLibro}}</p>
+        <p>Autor: {{libro.autorLibro}}</p>
+        <p>Categoría: {{libro.categoriaLibro}}</p>
+        <br><br>
+      </div>
     </div>
-    <div class="col-sm-6">
-      <p style="text-decoration-style: double">Nombre: {{libro.nombreLibro}}</p>
-      <p>Autor: {{libro.autorLibro}}</p>
-      <p>Categoría: {{libro.categoriaLibro}}</p>
-      <br><br>
+    <br><br>
+    <div class="row" [hidden]="libro.formularioCerrado">
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-block btn-info">Resenia y Comentario</button>
+      </div>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-block btn-success">Frases</button>
+      </div>
     </div>
+    <br><br>
   </div>
 </div>
