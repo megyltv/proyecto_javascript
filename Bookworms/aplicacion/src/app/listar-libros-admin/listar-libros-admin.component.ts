@@ -51,7 +51,7 @@ export class ListarLibrosAdminComponent implements OnInit {
   actualizarLibro(libro:any,formulario:NgForm){
     let parametros={
       nombreLibro: libro.nombreLibro,
-      //imagenLibro:libro.imagenLibro,
+      imagenLibro:libro.imagenLibro,
       autorLibro: libro.autorLibro,
       numeroPaginas: libro.numeroPaginas,
       fechaCreacion: libro.fechaCreacion,

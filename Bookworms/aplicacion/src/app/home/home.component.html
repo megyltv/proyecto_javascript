@@ -1,3 +1,64 @@
-<p>
-  home works!
-</p>
+<h1 class="text-center">{{title}}</h1>
+<br>
+<div class="row">
+  <div class="container">
+    <br>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+      </ol>
+
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox" *ngFor="let libro of libros">
+
+        <div class="item active">
+          <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+        </div>
+
+        <div class="item">
+          <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+        </div>
+
+        <div class="item">
+          <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+        </div>
+
+        <div class="item">
+          <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Siguiente</span>
+      </a>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="row text-center" *ngFor="let libro of libros">
+  <button class="btn btn-primary" (click)="libro.formularioCerrado=!libro.formularioCerrado">Mostrar mas</button>
+
+  <div class="col-sm-12" [hidden]="libro.formularioCerrado" >
+    <br>
+    <div class="col-sm-6">
+      <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+    </div>
+    <div class="col-sm-6">
+      <p style="text-decoration-style: double">Nombre: {{libro.nombreLibro}}</p>
+      <p>Autor: {{libro.autorLibro}}</p>
+      <p>Categoría: {{libro.categoriaLibro}}</p>
+      <br><br>
+    </div>
+  </div>
+</div>

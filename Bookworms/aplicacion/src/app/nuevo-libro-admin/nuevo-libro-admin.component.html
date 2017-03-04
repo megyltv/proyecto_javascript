@@ -49,6 +49,11 @@
             <option value="Misterio / Suspenso">Misterio / Suspenso</option>
           </select>
         </div>
+        <div class="form-group">
+          <label>Imagen del Libro</label>
+          <input required type="text" class="form-control" placeholder="Ingrese la url del libro" name="imagenLibro"
+                 [(ngModel)]="nuevoLibro.imagenLibro" #imagenLibro="ngModel" #nombreElm>
+        </div>
 
         <button [disabled]="disabledButtons.NuevoLibroFormSubmitButton" type="submit" class="btn btn-success">Crear Libro
         </button>
@@ -59,5 +64,3 @@
     </div>
     </div>
   </div>
-
-

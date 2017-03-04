@@ -31,7 +31,7 @@ export class NuevoLibroAdminComponent implements OnInit {
     this.disabledButtons.NuevoLibroFormSubmitButton = true;
     let libro = {
       nombreLibro: formulario.value.nombreLibro,
-      //imagenLibro:formulario.value.imagenLibro,
+      imagenLibro:formulario.value.imagenLibro,
       autorLibro: formulario.value.autorLibro,
       numeroPaginas: formulario.value.numeroPaginas,
       fechaCreacion: new Date(),
