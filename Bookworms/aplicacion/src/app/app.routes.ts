@@ -13,9 +13,9 @@ export const routes: Routes=[
   {path:'home', component:HomeComponent},
   {path:'administrador', component:ListarLibrosAdminComponent},
   {path:'administrador/crearLibro', component:NuevoLibroAdminComponent},
-  {path:'libro/:idLibro/entradas', component:ListarEntradasComponent},
-  {path:'libro/:idLibro/frases', component:ListarFrasesComponent},
-  {path:'libro/:idLibro/entradas/crearEntrada',component:NuevaEntradaComponent},
-  {path:'libro/:idLibro/frases/crearFrase',component:NuevaFraseComponent},
+  {path:'home/:idLibro/entradas', component:ListarEntradasComponent},
+  {path:'home/:idLibro/frases', component:ListarFrasesComponent},
+  {path:'home/:idLibro/entradas/crearEntrada',component:NuevaEntradaComponent},
+  {path:'home/:idLibro/frases/crearFrase',component:NuevaFraseComponent},
 ];
 export const routing:ModuleWithProviders=RouterModule.forRoot(routes);
