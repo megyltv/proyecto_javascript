@@ -1,0 +1,35 @@
+#form {
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
+
+#form p {
+  text-align: center;
+}
+
+#form label {
+  font-size: 20px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.color {
+  color: grey;
+}
+
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+}
+
+.color:hover,
+.color:hover ~ .color {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ .color {
+  color: orange;
+}
