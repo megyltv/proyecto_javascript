@@ -1,3 +1,56 @@
-<p>
-  nueva-entrada works!
-</p>
+<div class="container">
+  <h2>{{title}}</h2>
+  <div class="row" style="padding-bottom: 20px">
+    <div class="col-sm-12">
+      <form (ngSubmit)="crearResenia(NuevaReseniaForm)" #NuevaReseniaForm="ngForm">
+        <div class="form-group">
+          <label>Resenia: </label>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+              <textarea required type="text" class="form-control" placeholder="Ingrese la resenia del libro"
+                        name="resenia" [(ngModel)]="nuevaResenia.resenia" #resenia="ngModel"
+                        #nombreElm rows="10"></textarea>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Califica el libro: </label>
+          <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8 text-center">
+              <br>
+              <div class="row text-center">
+                <form>
+                  <p class="clasificacion">
+                    <input id="radio1" type="radio" name="calificacion" value="5" [(ngModel)]="nuevaResenia.calificacion" #calificacion="ngModel" #nombreElm>
+                    <label class="color" for="radio1">★</label>
+                    <input id="radio2" type="radio" name="calificacion" value="4" [(ngModel)]="nuevaResenia.calificacion" #calificacion="ngModel" #nombreElm>
+                    <label class="color" for="radio2">★</label>
+                    <input id="radio3" type="radio" name="calificacion" value="3" [(ngModel)]="nuevaResenia.calificacion" #calificacion="ngModel" #nombreElm>
+                    <label class="color" for="radio3">★</label>
+                    <input id="radio4" type="radio" name="calificacion" value="2" [(ngModel)]="nuevaResenia.calificacion" #calificacion="ngModel" #nombreElm>
+                    <label class="color" for="radio4">★</label>
+                    <input id="radio5" type="radio" name="calificacion" value="1" [(ngModel)]="nuevaResenia.calificacion" #calificacion="ngModel" #nombreElm>
+                    <label class="color" for="radio5">★</label>
+                  </p>
+                </form>
+              </div>
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+
+        <button [disabled]="disabledButtons.NuevaReseniaFormSubmitButton" type="submit" class="btn btn-success">Ingresar
+          Resenia
+        </button>
+        <button type="submit" class="btn btn-warning" [routerLink]="['/home',_parametros.idLibro,'entradas']">
+          Regresar a
+          las Resenias
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
