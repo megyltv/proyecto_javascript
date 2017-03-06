@@ -11,9 +11,10 @@ import {MasterUrlService} from "../services/master-url.service";
 export class NuevaEntradaComponent implements OnInit {
   title="Nueva Resenia";
   subtitle="Actualizar Resenia";
-  nuevaEntrada = {};
+  nuevaResenia = {};
   private _parametros:any;
-  entradas:any;
+  resenias:any;
+  libro= [];
 
   disabledButtons = {
     NuevaReseniaFormSubmitButton: false
@@ -27,24 +28,30 @@ export class NuevaEntradaComponent implements OnInit {
     this._ActivateRoute.params.subscribe(parametros=>{
       this._parametros=parametros;
       console.log(parametros);
+      this._http.get(this._masterUrl.url+'Libro/'+this._parametros.idLibro).subscribe(
+        (res)=>{
+          this.libro=res.json();
+          console.log(this.libro);
+        },
+        (err)=>{
+          console.log(err);
+        });
     });
-    //this.resenias.formularioCerrado=true;
   }
 
   crearResenia(formulario){
     this.disabledButtons.NuevaReseniaFormSubmitButton = true;
     let entrada = {
-      entrada: formulario.value.entrada,
-      calificacion: formulario.value.calificacion,
-      idLibro: this._parametros.idLibro
+      resenia: formulario.value.resenia,
+      //calificacion:formulario.value.calificacion,
+      idLibro:this._parametros.idLibro
     };
 
-    console.log("antes de url");
-    this._http.post(this._masterUrl.url + "/entradas", entrada)
+    this._http.post(this._masterUrl.url + "entradas", entrada)
       .subscribe(
         (res)=>{
-          this.entradas.push(res.json());
-          this.nuevaEntrada = {};
+          this.resenias.push(res.json());
+          this.nuevaResenia = {};
           this.disabledButtons.NuevaReseniaFormSubmitButton = false;
         },
         (err)=>{
@@ -55,9 +62,9 @@ export class NuevaEntradaComponent implements OnInit {
 
   actualizarResenia(entrada:any,formulario){
     let parametros={
-      entrada: formulario.value.entrada
+      resenia: entrada.resenia
     };
-    this._http.put(this._masterUrl.url+"/entradas/"+entrada.id,parametros).subscribe(
+    this._http.put(this._masterUrl.url+"entradas/"+entrada.id,parametros).subscribe(
       (res:Response)=>{
         entrada.formularioCerrado=!entrada.formularioCerrado;
         console.log("Respuesta: ",res.json());
