@@ -11,6 +11,7 @@ import {NuevaFraseComponent} from "./nueva-frase/nueva-frase.component";
 export const routes: Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
+  {path:'home/:nombreCategoria', component:HomeComponent},
   {path:'administrador', component:ListarLibrosAdminComponent},
   {path:'administrador/crearLibro', component:NuevoLibroAdminComponent},
   {path:'home/:idLibro/entradas', component:ListarEntradasComponent},

@@ -47,7 +47,7 @@ export class NuevaEntradaComponent implements OnInit {
       idLibro:this._parametros.idLibro
     };
 
-    this._http.post(this._masterUrl.url + "entradas", entrada)
+    this._http.post(this._masterUrl.url + "resenia", entrada)
       .subscribe(
         (res)=>{
           this.resenias.push(res.json());
@@ -64,7 +64,7 @@ export class NuevaEntradaComponent implements OnInit {
     let parametros={
       resenia: entrada.resenia
     };
-    this._http.put(this._masterUrl.url+"entradas/"+entrada.id,parametros).subscribe(
+    this._http.put(this._masterUrl.url+"resenia/"+entrada.id,parametros).subscribe(
       (res:Response)=>{
         entrada.formularioCerrado=!entrada.formularioCerrado;
         console.log("Respuesta: ",res.json());
