@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   subtitle: string="Algo que te apasiona, para todos los gustos!";
   libros = [];
   librosCarrusel=[];
+  //public index = [];
+
 
   constructor(private _http:Http,private _masterUrl:MasterUrlService) { }
 
@@ -24,6 +26,9 @@ export class HomeComponent implements OnInit {
             value.formularioCerrado=true;
             return value;
           });
+          console.log(this.libros);
+          // this.index = this.libros.indexOf(res);
+          // console.log(this.index);
           this.librosCarrusel=this.libros;
         },
         (err) => {

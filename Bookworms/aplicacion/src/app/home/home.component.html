@@ -16,10 +16,10 @@
 
 
         <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox" *ngFor="let libro of librosCarrusel">
+        <div class="carousel-inner" *ngFor="let i of index">
 
           <div class="item active">
-            <img [src]="libro.imagenLibro" alt="libro" width="200" height="200">
+            <img [src]="librosCarrusel[i]" alt="libro" width="200" height="200">
           </div>
 
           <div class="item">
