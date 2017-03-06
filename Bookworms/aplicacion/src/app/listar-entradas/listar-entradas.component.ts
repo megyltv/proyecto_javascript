@@ -19,6 +19,7 @@ export class ListarEntradasComponent implements OnInit {
 
   nuevoComentario = {};
   comentarios:any;
+  libro= [];
 
   disabledButtons = {
     NuevoComentarioFormSubmitButton: false
@@ -27,33 +28,39 @@ export class ListarEntradasComponent implements OnInit {
   constructor(private _ActivateRoute:ActivatedRoute, private _http:Http, private _masterUrl:MasterUrlService) { }
 
   ngOnInit() {
-    this._ActivateRoute.params.subscribe(parametros=>{
-      this._parametros=parametros;
-      console.log(parametros);
-      this._http.get(this._masterUrl.url+'Resenia?idLibro='+this._parametros.idLibro).subscribe(
-        (res:Response)=>{
-          this.resenias=res.json().map((value)=>{
-            value.formularioCerrado=true;
+    this._ActivateRoute.params.subscribe(parametros => {
+      this._parametros = parametros;
+      this._http.get(this._masterUrl.url + 'Resenia?idLibro=' + this._parametros.idLibro).subscribe(
+        (res: Response) => {
+          this.resenias = res.json().map((value) => {
+            value.formularioCerrado = true;
             return value;
           });
         },
-        (err)=>{
+        (err) => {
           console.log(err);
         }
       );
-      this._http.get(this._masterUrl.url+'Comentario?idLibro='+this._parametros.idLibro).subscribe(
-        (res:Response)=>{
-          this.comentarios=res.json().map((value)=>{
-            value.formularioCerrado=true;
+      this._http.get(this._masterUrl.url + 'Comentario?idLibro=' + this._parametros.idLibro).subscribe(
+        (res: Response) => {
+          this.comentarios = res.json().map((value) => {
+            value.formularioCerrado = true;
             return value;
           });
         },
-        (err)=>{
+        (err) => {
           console.log(err);
         }
-      )
+      );
+        this._http.get(this._masterUrl.url + 'Libro/' + this._parametros.idLibro).subscribe(
+          (res) => {
+            this.libro = res.json();
+            console.log(this.libro);
+          },
+          (err) => {
+            console.log(err);
+          });
     })
-
   }
 
   crearComentario(formulario:NgForm){

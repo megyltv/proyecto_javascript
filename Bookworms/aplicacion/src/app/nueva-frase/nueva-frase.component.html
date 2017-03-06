@@ -1,26 +1,46 @@
 <div class="container">
   <h2>{{title}}</h2>
+  <br>
+  <h4>Datos del Libro</h4>
   <div class="row" style="padding-bottom: 20px">
-    <div class="col-sm-8">
-      <form (ngSubmit)="crearFrase(NuevaFraseForm)" #NuevaFraseForm="ngForm">
-        <div class="form-group">
-          <label>Frase</label>
-          <textarea required type="text" class="form-control" placeholder="Ingrese la frase del libro"
-                    name="fraseDescripcion" [(ngModel)]="nuevaFrase.fraseDescripcion" #fraseDescripcion="ngModel"
-                    #nombreElm></textarea>
-        </div>
-        <div class="form-group">
-          <label>Personaje</label>
-          <input required type="text" class="form-control" placeholder="Ingrese el personaje que la dice"
-                 name="autor" [(ngModel)]="nuevaFrase.autor" #autor="ngModel" #nombreElm>
-        </div>
+    <div class="col-sm-4"></div>
+    <div class="col-sm-2">
+      <img src="{{libro.imagenLibro}}" alt="" width="100" height="150">
+    </div>
+    <div class="col-sm-4" style="padding-top: 20px">
+      <p>Libro: {{libro.nombreLibro}}</p>
+      <p>Autor: {{libro.autorLibro}}</p>
+      <p>Numero Paginas: {{libro.numeroPaginas}}</p>
+    </div>
 
-        <button [disabled]="disabledButtons.NuevaFraseFormSubmitButton" type="submit" class="btn btn-success" (click)="nuevaFrase.formularioCerrado=!nuevaFrase.formularioCerrado">Ingresar
-          Frase
-        </button>
-        <button type="submit" class="btn btn-warning" [routerLink]="['/home',_parametros.idLibro,'frases']">Regresar a
-          las Frases
-        </button>
+    <div class="col-sm-2"></div>
+  </div>
+
+  <div class="row" style="padding-bottom: 20px">
+    <div class="col-sm-12 " style="border-top-style: double;padding-top: 20px">
+      <form (ngSubmit)="crearFrase(NuevaFraseForm)" #NuevaFraseForm="ngForm">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+          <div class="form-group">
+            <label>Frase</label>
+            <textarea required type="text" class="form-control" placeholder="Ingrese la frase del libro"
+                      name="fraseDescripcion" [(ngModel)]="nuevaFrase.fraseDescripcion" #fraseDescripcion="ngModel"
+                      #nombreElm></textarea>
+          </div>
+          <div class="form-group" style="padding-bottom: 20px">
+            <label>Personaje</label>
+            <input required type="text" class="form-control" placeholder="Ingrese el personaje que la dice"
+                   name="autor" [(ngModel)]="nuevaFrase.autor" #autor="ngModel" #nombreElm>
+          </div>
+
+          <button [disabled]="disabledButtons.NuevaFraseFormSubmitButton" type="submit" class="btn btn-success"
+                  (click)="nuevaFrase.formularioCerrado=!nuevaFrase.formularioCerrado">Ingresar
+            Frase
+          </button>
+          <button type="submit" class="btn btn-warning" [routerLink]="['/home',_parametros.idLibro,'frases']">Regresar a
+            las Frases
+          </button>
+        </div>
 
       </form>
     </div>

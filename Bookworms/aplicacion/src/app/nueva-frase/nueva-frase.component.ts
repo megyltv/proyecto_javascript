@@ -16,6 +16,7 @@ export class NuevaFraseComponent implements OnInit {
   nuevaFrase = {};
   private _parametros:any;
   frases:any;
+  libro= [];
 
   disabledButtons = {
     NuevaFraseFormSubmitButton: false
@@ -27,8 +28,15 @@ export class NuevaFraseComponent implements OnInit {
     this._ActivateRoute.params.subscribe(parametros=>{
       this._parametros=parametros;
       console.log(parametros);
-    })
-    this.frases.formularioCerrado=!this.frases.formularioCerrado;
+        this._http.get(this._masterUrl.url+'Libro/'+this._parametros.idLibro).subscribe(
+          (res)=>{
+            this.libro=res.json();
+            console.log(this.libro);
+      },
+      (err)=>{
+        console.log(err);
+      });
+    });
   }
 
   crearFrase(formulario:NgForm){
