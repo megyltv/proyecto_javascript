@@ -12,9 +12,9 @@ export class NuevaEntradaComponent implements OnInit {
   title="Nueva Resenia";
   subtitle="Actualizar Resenia";
   description="";
-  nuevaResenia = {};
+  nuevaEntrada = {};
   private _parametros:any;
-  resenias:any;
+  entradas:any;
 
   disabledButtons = {
     NuevaReseniaFormSubmitButton: false
@@ -35,7 +35,7 @@ export class NuevaEntradaComponent implements OnInit {
   crearResenia(formulario){
     this.disabledButtons.NuevaReseniaFormSubmitButton = true;
     let resenia = {
-      resenia: formulario.value.resenia,
+      entrada: formulario.value.entrada,
       calificacion: formulario.value.calificacion,
       idLibro: this._parametros.idLibro
     };
@@ -43,8 +43,8 @@ export class NuevaEntradaComponent implements OnInit {
     this._http.post(this._masterUrl.url + "Entradas", resenia)
       .subscribe(
         (res)=>{
-          this.resenias.push(res.json());
-          this.nuevaResenia = {};
+          this.entradas.push(res.json());
+          this.nuevaEntrada = {};
           this.disabledButtons.NuevaReseniaFormSubmitButton = false;
         },
         (err)=>{
