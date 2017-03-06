@@ -4,7 +4,10 @@
   <p>{{description}}</p>
 
   <div class="row">
-    <div class="col-sm-10"></div>
+    <div class="col-sm-2">
+      <button class="btn btn-default" [routerLink]="['/home',_parametros.idLibro,'entradas']">Ver Entradas</button>
+    </div>
+    <div class="col-sm-8"></div>
     <div class="col-sm-2" style="padding-bottom: 10px">
       <button class="btn btn-default" [routerLink]="[_parametros.idLibro,'crearFrase']">Nueva Frase</button>
     </div>
@@ -14,10 +17,10 @@
   <div class="row"  style="border-top: double #000000">
     <div class="col-sm-12" *ngFor="let frase of frases">
       <br>
-      <div class="col-sm-5">
+      <div class="col-sm-7">
         <h5 style="font-style:italic">{{frase.fraseDescripcion}}</h5>
       </div>
-      <div class="col-sm-7" style="padding-top: 100px">
+      <div class="col-sm-4" style="padding-top: 40px">
         <p style="text-decoration-style: double">Autor: {{frase.autor}}</p>
         <br><br>
       </div>

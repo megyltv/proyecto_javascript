@@ -1,22 +1,25 @@
 <div class="container">
-  <h2>{{subtitle}}</h2>
-  <div class="row">
+  <h2>{{title}}</h2>
+  <div class="row" style="padding-bottom: 20px">
     <div class="col-sm-8">
       <form (ngSubmit)="crearFrase(NuevaFraseForm)" #NuevaFraseForm="ngForm">
         <div class="form-group">
           <label>Frase</label>
-          <input required type="text" class="form-control" placeholder="Ingrese nombre del libro"
-                 name="fraseDescripcion" [(ngModel)]="nuevaFrase.fraseDescripcion" #fraseDescripcion="ngModel" #nombreElm>
+          <textarea required type="text" class="form-control" placeholder="Ingrese la frase del libro"
+                    name="fraseDescripcion" [(ngModel)]="nuevaFrase.fraseDescripcion" #fraseDescripcion="ngModel"
+                    #nombreElm></textarea>
         </div>
         <div class="form-group">
-          <label>Autor</label>
-          <input required type="text" class="form-control" placeholder="Ingrese el autor del libro"
+          <label>Personaje</label>
+          <input required type="text" class="form-control" placeholder="Ingrese el personaje que la dice"
                  name="autor" [(ngModel)]="nuevaFrase.autor" #autor="ngModel" #nombreElm>
         </div>
 
-        <button [disabled]="disabledButtons.NuevaFraseFormSubmitButton" type="submit" class="btn btn-success">Ingresar Frase
+        <button [disabled]="disabledButtons.NuevaFraseFormSubmitButton" type="submit" class="btn btn-success" (click)="nuevaFrase.formularioCerrado=!nuevaFrase.formularioCerrado">Ingresar
+          Frase
         </button>
-        <button type="submit" class="btn btn-warning" [routerLink]="['/administrador']">Regresar a las Frases
+        <button type="submit" class="btn btn-warning" [routerLink]="['/home',_parametros.idLibro,'frases']">Regresar a
+          las Frases
         </button>
 
       </form>

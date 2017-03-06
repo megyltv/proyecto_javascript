@@ -1,3 +1,73 @@
-<p>
-  listar-entradas works!
-</p>
+<div class="container">
+  <h2>{{title}}</h2>
+  <h3>Libro</h3>
+  <p>{{description}}</p>
+  <div class="row">
+    <div class="col-sm-2">
+      <button class="btn btn-default" [routerLink]="['/home',_parametros.idLibro,'frases']">Ver Frases</button>
+    </div>
+    <div class="col-sm-8"></div>
+    <div class="col-sm-2" style="padding-bottom: 10px">
+      <button class="btn btn-default" [routerLink]="[_parametros.idLibro,'crearEntrada']">Nueva Entrada</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row" style="border-top: double #000000">
+      <h3>Resenias Existentes</h3>
+      <div class="col-sm-12" *ngFor="let resenia of resenias">
+        <br>
+        <div class="col-sm-7">
+          <h5 style="font-style:italic">{{resenia.reseniaDescripcion}}</h5>
+        </div>
+        <div class="col-sm-4" style="padding-top: 40px">
+          <p style="text-decoration-style: double">Rating: {{resenia.rating}}</p>
+          <br><br>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="container">
+  <h3>{{subtitle}}</h3>
+  <p>{{description2}}</p>
+  <form (ngSubmit)="crearComentario(NuevoComentarioForm)" #NuevoComentarioForm="ngForm">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input required type="text" class="form-control" placeholder="Ingrese su nombre"
+                    name="nombreComentario" [(ngModel)]="nuevoComentario.nombreComentario" #fraseDescripcion="ngModel"
+                    #nombreElm>
+        </div>
+        <div class="form-group">
+          <label>Comentario</label>
+          <textarea required type="texy" class="form-control glyphicon-comment" placeholder="Ingrese su comentario"
+                    name="comentario" [(ngModel)]="nuevoComentario.comentario" #fraseDescripcion="ngModel"
+                    #nombreElm></textarea>
+        </div>
+        <button [disabled]="disabledButtons.NuevoComentarioForm" type="submit" class="btn btn-success">Ingresar
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <div class="row" style="padding-top: 20px">
+    <div class="col-sm-12" *ngFor="let comentario of comentarios">
+      <br>
+      <div class="col-sm-7">
+        <h5>{{comentario.nombreComentario}}</h5>
+      </div>
+      <div class="col-sm-4" style="padding-top: 40px">
+        <p>Rating: {{comentario.comentario}}</p>
+        <br><br>
+      </div>
+      <br><br>
+    </div>
+  </div>
+</div>
+
+

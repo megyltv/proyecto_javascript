@@ -17,6 +17,7 @@ export class ListarFrasesComponent implements OnInit {
   constructor(private _ActivateRoute:ActivatedRoute, private _http:Http, private _masterURL:MasterUrlService) { }
 
   ngOnInit() {
+
     this._ActivateRoute.params.subscribe(parametros=>{
       this._parametros=parametros;
       console.log(parametros);
