@@ -6,10 +6,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nueva-frase.component.css']
 })
 export class NuevaFraseComponent implements OnInit {
+  subtitle="Nueva Frase";
+  nuevaFrase = {};
+
+  disabledButtons = {
+    NuevaFraseFormSubmitButton: false
+  };
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  crearFrase(NuevaFraseForm){
+
   }
 
 }
