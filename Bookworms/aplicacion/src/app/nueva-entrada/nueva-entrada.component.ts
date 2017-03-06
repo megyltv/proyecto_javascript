@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Http} from "@angular/http";
+import {Http, Response} from "@angular/http";
 import {MasterUrlService} from "../services/master-url.service";
 
 @Component({
@@ -11,7 +11,6 @@ import {MasterUrlService} from "../services/master-url.service";
 export class NuevaEntradaComponent implements OnInit {
   title="Nueva Resenia";
   subtitle="Actualizar Resenia";
-  description="";
   nuevaEntrada = {};
   private _parametros:any;
   entradas:any;
@@ -34,13 +33,14 @@ export class NuevaEntradaComponent implements OnInit {
 
   crearResenia(formulario){
     this.disabledButtons.NuevaReseniaFormSubmitButton = true;
-    let resenia = {
+    let entrada = {
       entrada: formulario.value.entrada,
       calificacion: formulario.value.calificacion,
       idLibro: this._parametros.idLibro
     };
 
-    this._http.post(this._masterUrl.url + "Entradas", resenia)
+    console.log("antes de url");
+    this._http.post(this._masterUrl.url + "/entradas", entrada)
       .subscribe(
         (res)=>{
           this.entradas.push(res.json());
@@ -51,6 +51,21 @@ export class NuevaEntradaComponent implements OnInit {
           console.log("Ocurrio un error", err);
         }
       );
+  }
+
+  actualizarResenia(entrada:any,formulario){
+    let parametros={
+      entrada: formulario.value.entrada
+    };
+    this._http.put(this._masterUrl.url+"/entradas/"+entrada.id,parametros).subscribe(
+      (res:Response)=>{
+        entrada.formularioCerrado=!entrada.formularioCerrado;
+        console.log("Respuesta: ",res.json());
+      },
+      (err)=>{
+        console.log("Error: ",err);
+      }
+    );
   }
 
 }
