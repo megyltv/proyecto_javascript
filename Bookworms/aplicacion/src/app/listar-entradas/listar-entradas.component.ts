@@ -10,10 +10,10 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['./listar-entradas.component.css']
 })
 export class ListarEntradasComponent implements OnInit {
-  title="Resenias";
+  title="Reseñas";
   subtitle="Comentarios";
-  description="A continuacion se listan las resenias ingresadas para el libro";
-  description2="Dejanos tu comentario";
+  description="A continuación se listan las reseñas ingresadas para el libro";
+  description2="Déjanos tu comentario";
   private _parametros:any;
   resenias=[];
 

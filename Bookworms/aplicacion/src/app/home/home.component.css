@@ -4,3 +4,19 @@
   height:"250";
   margin: auto;
 }
+button{
+  /*background: linear-gradient(#D8F6CE,#FFFFFF)*/
+  background-color: #D8F6CE;
+}
+.container{
+  padding-top: 15px
+}
+.principal{
+  /*background: linear-gradient(#F2F5A9,#FFFFFF)*/
+  background-color: #F2F5A9;
+}
+
+.color{
+  background: linear-gradient(#FFFFFF,#E6E6E6,#FFFFFF)
+  /*background-color: #E6E6E6;*/
+}
