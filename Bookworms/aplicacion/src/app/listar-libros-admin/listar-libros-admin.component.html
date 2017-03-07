@@ -1,23 +1,9 @@
-<nav class="navbar navbar-default bg-info">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-              data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span>MENU</span>
-      </button>
-      <a class="navbar-brand" [routerLink]="['/administrador']">Administrador</a>
-    </div>
+<div class="container" style="padding-bottom: 20px">
+  <button class="btn btn-default principal" [routerLink]="['/administrador/crearLibro']">Crear Libro</button>
+  <button class="btn btn-default principal" [routerLink]="['/administrador']">Listar Libros</button>
+</div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a [routerLink]="['/administrador']">Home</a></li>
-        <li><a [routerLink]="['/administrador/crearLibro']">Crear Libro</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<div class="container">
+<div class="container " style="border-top: double #000000">
   <h2>{{subtitle}}</h2>
   <p>{{description}}</p>
 
