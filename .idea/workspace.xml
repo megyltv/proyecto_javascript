@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fedc3554-ea34-496e-8d0d-402607543b07" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/app.component.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/.idea/workspace.xml" afterPath="$PROJECT_DIR$/Bookworms/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/app.component.html" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/app.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/home/home.component.css" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/home/home.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/home/home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.css" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.ts" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-frases/listar-frases.component.css" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-frases/listar-frases.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-libros-admin/listar-libros-admin.component.css" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-libros-admin/listar-libros-admin.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-libros-admin/listar-libros-admin.component.html" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-libros-admin/listar-libros-admin.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/nuevo-libro-admin/nuevo-libro-admin.component.css" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/nuevo-libro-admin/nuevo-libro-admin.component.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/nuevo-libro-admin/nuevo-libro-admin.component.html" afterPath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/nuevo-libro-admin/nuevo-libro-admin.component.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.html" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,16 +20,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="listar-entradas.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bookworms/aplicacion/src/app/listar-entradas/listar-entradas.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1011">
-              <caret line="53" column="30" lean-forward="true" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="nueva-entrada.component.ts" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Bookworms/aplicacion/src/app/nueva-entrada/nueva-entrada.component.ts">
           <provider selected="true" editor-type-id="text-editor">
@@ -380,12 +358,12 @@
       <workItem from="1488826899558" duration="3009000" />
       <workItem from="1488836662842" duration="309000" />
       <workItem from="1488851897008" duration="3059000" />
-      <workItem from="1488893525565" duration="5340000" />
+      <workItem from="1488893525565" duration="5409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29197000" />
+    <option name="totallyTimeSpent" value="29266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="696" extended-state="6" />
@@ -398,7 +376,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3262032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3262032" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
