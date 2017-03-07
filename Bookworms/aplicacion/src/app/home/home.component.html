@@ -1,31 +1,41 @@
-<h2 class="text-center">{{title}}</h2>
-<br>
-<div class="row">
   <div class="container">
+    <h2 style="font-style: italic">Bienvenidos a BookWorms!!</h2>
+    <p class="text-justify">En esta página tu podrás ingresar tus propias reseñas de los libros que has leído y realizar recomendaciones. Así mismo, podrás ingresar las frases que más te hayan gustado de tus personajes favoritos!!</p>
+
+    <h3 class="text-center">{{title}}</h3>
     <br>
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6 color" style="padding-bottom: 20px">
       <div *ngIf="librosCarrusel.length>1">
-        <h4>{{librosCarrusel[indiceActual].nombreLibro}}</h4>
-        <img [src]="librosCarrusel[indiceActual].imagenLibro" style="height: 300px" alt="">
-        <h3>{{librosCarrusel[indiceActual].autorLibro}}</h3>
+        <img class="center-block" [src]="librosCarrusel[indiceActual].imagenLibro" style="height: 300px" alt="">
+        <h4 class="text-center">{{librosCarrusel[indiceActual].nombreLibro}}</h4>
       </div>
 
     </div>
-    <div class="col-sm-2"></div>
+    <div class="col-sm-3" style="padding-bottom: 20px"></div>
   </div>
+
+<div class="container" style="border-top-style: double">
+  <h5>Listar Por:</h5>
+  <button class="btn btn-default principal" (click)="ngOnInit()">Todas</button>
+  <button class="btn btn-default principal" (click)="cambiarOrden()">Recientes</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Biografia')">Biografia</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Clasico')">Clasico</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Aventuras')">Aventuras</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Ciencia Ficcion / Fantasia')">Ciencia Ficcion / Fantasia</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Romantica')">Romantica</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Misterio / Suspenso')">Misterio / Suspenso</button>
 </div>
+
 <br><br>
 
-
 <h4 class="text-center">{{subtitle}}</h4>
-<div class="container" style="padding-top: 30px">
-  <!--<button class="btn btn-default btn-block" (click)="listarLibros()">Mostrar mas</button>-->
+<div class="container" style="padding-top: 30px; padding-bottom: 20px">
   <div class="row text-center"  *ngFor="let libro of libros">
     <div class="col-sm-12">
       <br>
       <div class="col-sm-5">
-        <img [src]="libro.imagenLibro" alt="libro" width="150" height="200">
+        <img [src]="libro.imagenLibro" alt="libro" height="200">
       </div>
       <div class="col-sm-7" style="padding-top: 50px">
         <p style="text-decoration-style: double">Nombre: {{libro.nombreLibro}}</p>
@@ -36,8 +46,6 @@
         <a [routerLink]="[libro.id,'frases']">Ir a Frases</a>
         <br><br>
       </div>
-    </div>
-    <div class="row">
     </div>
     <br>
   </div>

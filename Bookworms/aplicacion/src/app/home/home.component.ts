@@ -11,13 +11,13 @@ import {setInterval} from "timers";
 })
 export class HomeComponent implements OnInit {
 
-  title: string = "Novedades";
+  title: string = "Últimas Novedades";
   subtitle: string = "Algo que te apasiona, para todos los gustos!";
   libros = [];
   librosCarrusel = [];
-  indiceActual:number = 0;
+  indiceActual: number = 0;
 
-  constructor( private _http: Http, private _masterUrl: MasterUrlService) {
+  constructor(private _http: Http, private _masterUrl: MasterUrlService) {
   }
 
   ngOnInit() {
@@ -25,20 +25,20 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (res: Response) => {
           this.libros = res.json().map((value) => {
-            value.formularioCerrado=true;
+            value.formularioCerrado = true;
             return value;
           });
-          this.librosCarrusel=this.libros;
-          setInterval(()=>{
+          this.librosCarrusel = this.libros;
+          setInterval(() => {
             console.log(this.librosCarrusel.length);
             console.log(this.indiceActual);
 
-            if(this.indiceActual+1>=this.librosCarrusel.length){
+            if (this.indiceActual + 1 >= this.librosCarrusel.length) {
               this.indiceActual = 0;
-            }else{
-              this.indiceActual = this.indiceActual+1;
+            } else {
+              this.indiceActual = this.indiceActual + 1;
             }
-          },2000);
+          }, 2000);
         },
         (err) => {
           console.log(err);
@@ -46,21 +46,38 @@ export class HomeComponent implements OnInit {
       )
   }
 
-// listarPorCategoria(){
-//   this._http.get(this._masterUrl.url + "Libro?categoriaLibro="+this._parametros.nombreCategoria)
-//     .subscribe(
-//       (res: Response) => {
-//         this.libros = res.json().map((value) => {
-//           value.formularioCerrado=true;
-//           return value;
-//         });
-//       },
-//       (err) => {
-//         console.log(err);
-//       }
-//     )
-//
-// }
+  listarPorCategoria(categoria: string) {
+    this._http.get(this._masterUrl.url + "Libro?categoriaLibro=" + categoria)
+      .subscribe(
+        (res: Response) => {
+          this.libros = res.json().map((value) => {
+            value.formularioCerrado = true;
+            return value;
+          });
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+
+  }
+
+  cambiarOrden() {
+    this._http.get(this._masterUrl.url + "Libro")
+      .subscribe(
+        (res: Response) => {
+          this.libros = res.json().map((value) => {
+            value.formularioCerrado = true;
+            return value;
+          });
+          this.libros=this.libros.reverse();
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+
+  }
 
 }
 

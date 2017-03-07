@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style="background: linear-gradient(#E0F2F7,#FFFFFF)">
   <div class="col-sm-1"></div>
   <div class="col-sm-9">
     <h1 class="text-center">{{title}}</h1>
@@ -14,21 +14,12 @@
               data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span>MENU</span>
       </button>
-      <a class="navbar-brand" [routerLink]="['/home']">Home</a>
+        <a class="navbar-brand glyphicon glyphicon-home" [routerLink]="['/home']" >  Home</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">Categorías
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a [routerLink]="['/home']">Biografía</a></li>
-          <li><a [routerLink]="['/home']">Clásico</a></li>
-          <li><a [routerLink]="['/home']">Aventuras</a></li>
-          <li><a [routerLink]="['/home']">Ciencia Ficción / Fantasía</a></li>
-          <li><a [routerLink]="['/home']">Romántica</a></li>
-          <li><a [routerLink]="['/home']">Misterio / Suspenso</a></li>
-        </ul>
+      <li>
+        <p class="text-center">"La lectura nos abre las puertas del mundo que te atrevas a imaginar"</p>
       </li>
-      <li><a [routerLink]="['/recientes']">Recientes</a></li>
     </ul>
   </div>
 </nav>
