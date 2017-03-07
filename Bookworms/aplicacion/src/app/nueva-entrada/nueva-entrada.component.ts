@@ -11,9 +11,9 @@ import {MasterUrlService} from "../services/master-url.service";
 export class NuevaEntradaComponent implements OnInit {
   title="Nueva Resenia";
   subtitle="Actualizar Resenia";
-  nuevaResenia = {};
+  nuevaResenia:any = {};
   private _parametros:any;
-  resenias:any;
+  resenias:any =[];
   libro= [];
 
   disabledButtons = {
@@ -39,37 +39,17 @@ export class NuevaEntradaComponent implements OnInit {
     });
   }
 
-  valor(rating:number){
-    console.log(rating);
-    let json = JSON.stringify(rating);
-    this._http.post(this._masterUrl.url + "resenia", json)
-      .subscribe(
-        (res) => {
-          console.log(res);
-        },
-        (err) => {
-          console.log(err);
-        }
-      )
-  }
-
-  crearResenia(formulario){
+  crearResenia(nuevaResenia){
     this.disabledButtons.NuevaReseniaFormSubmitButton = true;
-    console.log(formulario.value.resenia);
-    console.log(formulario.value.rating);
     let resenia = {
-      resenia: formulario.value.resenia,
-      rating:formulario.value.rating,
+      resenia: nuevaResenia.resenia,
+      rating:nuevaResenia.rating,
       idLibro:this._parametros.idLibro
     };
-
-    console.log(resenia);
-
     this._http.post(this._masterUrl.url + "resenia", resenia)
       .subscribe(
         (res)=>{
           console.log(res);
-          this.resenias.push(res.json());
           this.nuevaResenia = {};
           this.disabledButtons.NuevaReseniaFormSubmitButton = false;
         },
