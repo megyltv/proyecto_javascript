@@ -30,9 +30,6 @@ export class HomeComponent implements OnInit {
           });
           this.librosCarrusel=this.libros;
           setInterval(()=>{
-            console.log(this.librosCarrusel.length);
-            console.log(this.indiceActual);
-
             if(this.indiceActual+1>=this.librosCarrusel.length){
               this.indiceActual = 0;
             }else{

@@ -39,17 +39,36 @@ export class NuevaEntradaComponent implements OnInit {
     });
   }
 
+  valor(rating:number){
+    console.log(rating);
+    let json = JSON.stringify(rating);
+    this._http.post(this._masterUrl.url + "resenia", json)
+      .subscribe(
+        (res) => {
+          console.log(res);
+        },
+        (err) => {
+          console.log(err);
+        }
+      )
+  }
+
   crearResenia(formulario){
     this.disabledButtons.NuevaReseniaFormSubmitButton = true;
-    let entrada = {
+    console.log(formulario.value.resenia);
+    console.log(formulario.value.rating);
+    let resenia = {
       resenia: formulario.value.resenia,
-      //calificacion:formulario.value.calificacion,
+      rating:formulario.value.rating,
       idLibro:this._parametros.idLibro
     };
 
-    this._http.post(this._masterUrl.url + "resenia", entrada)
+    console.log(resenia);
+
+    this._http.post(this._masterUrl.url + "resenia", resenia)
       .subscribe(
         (res)=>{
+          console.log(res);
           this.resenias.push(res.json());
           this.nuevaResenia = {};
           this.disabledButtons.NuevaReseniaFormSubmitButton = false;
@@ -60,13 +79,13 @@ export class NuevaEntradaComponent implements OnInit {
       );
   }
 
-  actualizarResenia(entrada:any,formulario){
+  actualizarResenia(resenias:any,formulario){
     let parametros={
-      resenia: entrada.resenia
+      resenia: resenias.resenia
     };
-    this._http.put(this._masterUrl.url+"resenia/"+entrada.id,parametros).subscribe(
+    this._http.put(this._masterUrl.url+"resenia/"+resenias.id,parametros).subscribe(
       (res:Response)=>{
-        entrada.formularioCerrado=!entrada.formularioCerrado;
+        resenias.formularioCerrado=!resenias.formularioCerrado;
         console.log("Respuesta: ",res.json());
       },
       (err)=>{
