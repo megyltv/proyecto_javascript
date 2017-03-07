@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>{{title}}</h2>
+
+  <div class="container">
+    <div class="row" style="border-top: double #000000" style="padding-bottom: 40px">
+      <h3>Reseñas Existentes</h3>
+      <p>{{description}}</p>
+      <div class="col-sm-12 borde" *ngFor="let resenia of resenias">
+        <br>
+        <div class="col-sm-7">
+          <h5 style="font-style:italic">{{resenia.resenia}}</h5>
+        </div>
+        <div class="col-sm-4" style="padding-top: 40px">
+          <p style="text-decoration-style: double">Rating: {{resenia.rating}}</p>
+          <br>
+        </div>
+        <br><br>
+        <div class="row">
+          <button class="btn btn-danger" (click)="borrarResenia(resenia.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

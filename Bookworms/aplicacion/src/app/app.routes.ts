@@ -7,6 +7,7 @@ import {ListarLibrosAdminComponent} from "./listar-libros-admin/listar-libros-ad
 import {ListarFrasesComponent} from "./listar-frases/listar-frases.component";
 import {NuevaEntradaComponent} from "./nueva-entrada/nueva-entrada.component";
 import {NuevaFraseComponent} from "./nueva-frase/nueva-frase.component";
+import {ListarEntradasAdminComponent} from "./listar-entradas-admin/listar-entradas-admin.component";
 
 export const routes: Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -18,5 +19,6 @@ export const routes: Routes=[
   {path:'home/:idLibro/frases', component:ListarFrasesComponent},
   {path:'home/:idLibro/entradas/:idLibro/crearEntrada',component:NuevaEntradaComponent},
   {path:'home/:idLibro/frases/:idLibro/crearFrase',component:NuevaFraseComponent},
+  {path:'administrador/:idLibro/entradas',component:ListarEntradasAdminComponent}
 ];
 export const routing:ModuleWithProviders=RouterModule.forRoot(routes);

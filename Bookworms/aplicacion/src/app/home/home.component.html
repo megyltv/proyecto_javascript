@@ -1,12 +1,12 @@
   <div class="container">
-    <h2 style="font-style: italic">Bienvenidos a BookWorms!!</h2>
+    <h2 style="font-style: italic">Bienvenidos!!</h2>
     <p class="text-justify">En esta página tu podrás ingresar tus propias reseñas de los libros que has leído y realizar recomendaciones. Así mismo, podrás ingresar las frases que más te hayan gustado de tus personajes favoritos!!</p>
 
     <h3 class="text-center">{{title}}</h3>
     <br>
     <div class="col-sm-3"></div>
     <div class="col-sm-6 color" style="padding-bottom: 20px">
-      <div *ngIf="librosCarrusel.length>1">
+      <div *ngIf="librosCarrusel.length>0">
         <img class="center-block" [src]="librosCarrusel[indiceActual].imagenLibro" style="height: 300px" alt="">
         <h4 class="text-center">{{librosCarrusel[indiceActual].nombreLibro}}</h4>
       </div>
@@ -20,7 +20,7 @@
   <button class="btn btn-default principal" (click)="ngOnInit()">Todas</button>
   <button class="btn btn-default principal" (click)="cambiarOrden()">Recientes</button>
   <button class="btn btn-default" (click)="listarPorCategoria('Biografia')">Biografia</button>
-  <button class="btn btn-default" (click)="listarPorCategoria('Clasico')">Clasico</button>
+  <button class="btn btn-default" (click)="listarPorCategoria('Clasica')">Clasica</button>
   <button class="btn btn-default" (click)="listarPorCategoria('Aventuras')">Aventuras</button>
   <button class="btn btn-default" (click)="listarPorCategoria('Ciencia Ficcion / Fantasia')">Ciencia Ficcion / Fantasia</button>
   <button class="btn btn-default" (click)="listarPorCategoria('Romantica')">Romantica</button>

@@ -35,7 +35,8 @@ export class NuevoLibroAdminComponent implements OnInit {
       autorLibro: formulario.value.autorLibro,
       numeroPaginas: formulario.value.numeroPaginas,
       fechaCreacion: new Date(),
-      categoriaLibro: formulario.value.categoriaLibro
+      categoriaLibro: formulario.value.categoriaLibro,
+      sinopsisLibro: formulario.value.sinopsisLibro
     };
 
     this._http.post(this._masterUrl.url + "Libro", libro)

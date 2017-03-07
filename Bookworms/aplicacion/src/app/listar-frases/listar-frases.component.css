@@ -2,3 +2,7 @@ button{
   /*background: linear-gradient(#D8F6CE,#FFFFFF)*/
   background-color: #CEECF5;
 }
+
+.borde{
+  border-style: ridge;
+}

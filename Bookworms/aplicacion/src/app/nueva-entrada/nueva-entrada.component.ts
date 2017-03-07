@@ -15,6 +15,8 @@ export class NuevaEntradaComponent implements OnInit {
   private _parametros:any;
   resenias:any =[];
   libro= [];
+  idResenia:number;
+  editarResenia:any = {};
 
   disabledButtons = {
     NuevaReseniaFormSubmitButton: false
@@ -57,13 +59,15 @@ export class NuevaEntradaComponent implements OnInit {
           console.log("Ocurrio un error", err);
         }
       );
+
   }
 
   actualizarResenia(resenias:any,formulario){
     let parametros={
       resenia: resenias.resenia
     };
-    this._http.put(this._masterUrl.url+"resenia/"+resenias.id,parametros).subscribe(
+
+    this._http.put(this._masterUrl.url+"resenia/"+this.idResenia,parametros).subscribe(
       (res:Response)=>{
         resenias.formularioCerrado=!resenias.formularioCerrado;
         console.log("Respuesta: ",res.json());

@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Http, Response} from "@angular/http";
 import {MasterUrlService} from "../services/master-url.service";
 import {NgForm} from "@angular/forms";
+import {isUndefined} from "util";
 
 @Component({
   selector: 'app-listar-entradas',
@@ -16,6 +17,7 @@ export class ListarEntradasComponent implements OnInit {
   description2="Déjanos tu comentario";
   private _parametros:any;
   resenias=[];
+  acu:number = 0;
 
   nuevoComentario = {};
   comentarios:any;
@@ -36,6 +38,13 @@ export class ListarEntradasComponent implements OnInit {
             value.formularioCerrado = true;
             return value;
           });
+
+          for(var i=0; i<this.resenias.length; i++){
+            if(!isNaN(this.resenias[i].rating)){
+              this.acu = this.acu + this.resenias[i].rating;
+            }
+          }
+          this.acu = this.acu/this.resenias.length;
         },
         (err) => {
           console.log(err);

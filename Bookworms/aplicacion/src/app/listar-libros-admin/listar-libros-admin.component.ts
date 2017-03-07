@@ -55,7 +55,8 @@ export class ListarLibrosAdminComponent implements OnInit {
       autorLibro: libro.autorLibro,
       numeroPaginas: libro.numeroPaginas,
       fechaCreacion: libro.fechaCreacion,
-      categoriaLibro: libro.categoriaLibro
+      categoriaLibro: libro.categoriaLibro,
+      sinopsisLibro: libro.sinopsisLibro
     };
     this._http.put(this._masterUrl.url+"Libro/"+libro.id,parametros).subscribe(
       (res:Response)=>{

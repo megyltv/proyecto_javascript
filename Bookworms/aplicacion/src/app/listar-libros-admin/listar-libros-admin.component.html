@@ -18,7 +18,7 @@
         <p style="text-decoration-style: double">Autor: {{libro.autorLibro}}</p>
         <p>Número de Páginas: {{libro.numeroPaginas}}</p>
         <p>Categoría: {{libro.categoriaLibro}}</p>
-
+        <a [routerLink]="[libro.id,'entradas']">Ir a Reseñas</a>
         <br><br>
       </div>
       <br><br>
@@ -69,6 +69,11 @@
                 <label>Imagen del Libro</label>
                 <input required type="text" class="form-control" placeholder="Ingrese la url del libro" name="imagenLibro"
                        [(ngModel)]="libro.imagenLibro" #imagenLibro="ngModel" #nombreElm>
+              </div>
+              <div class="form-group">
+                <label>Sinopsis del Libro</label>
+                <textarea required type="text" class="form-control" placeholder="Ingrese la sinopsis del libro" name="sinopsisLibro"
+                          [(ngModel)]="libro.sinopsisLibro" #sinopsisLibro="ngModel" #nombreElm rows="10"></textarea>
               </div>
 
               <div class="col-sm-7">

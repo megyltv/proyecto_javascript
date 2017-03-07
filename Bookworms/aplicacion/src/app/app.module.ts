@@ -13,6 +13,7 @@ import { NuevaFraseComponent } from './nueva-frase/nueva-frase.component';
 import { ListarFrasesComponent } from './listar-frases/listar-frases.component';
 import {MasterUrlService} from "./services/master-url.service";
 import {routing} from "./app.routes";
+import { ListarEntradasAdminComponent } from './listar-entradas-admin/listar-entradas-admin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {routing} from "./app.routes";
     ListarEntradasComponent,
     NuevaEntradaComponent,
     NuevaFraseComponent,
-    ListarFrasesComponent
+    ListarFrasesComponent,
+    ListarEntradasAdminComponent
   ],
   imports: [
     BrowserModule,

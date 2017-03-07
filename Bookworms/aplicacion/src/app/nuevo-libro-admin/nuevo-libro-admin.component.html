@@ -40,6 +40,12 @@
           <input required type="text" class="form-control" placeholder="Ingrese la url del libro" name="imagenLibro"
                  [(ngModel)]="nuevoLibro.imagenLibro" #imagenLibro="ngModel" #nombreElm>
         </div>
+        <div class="form-group">
+          <label>Sinopsis del Libro</label>
+          <textarea required type="text" class="form-control" placeholder="Ingrese la sinopsis del libro" name="sinopsisLibro"
+                    [(ngModel)]="nuevoLibro.sinopsisLibro" #sinopsisLibro="ngModel" #nombreElm rows="10"></textarea>
+        </div>
+
 
         <button [disabled]="disabledButtons.NuevoLibroFormSubmitButton" type="submit" class="btn btn-success">Crear Libro
         </button>
