@@ -3,7 +3,6 @@ import {ActivatedRoute} from "@angular/router";
 import {Http, Response} from "@angular/http";
 import {MasterUrlService} from "../services/master-url.service";
 import {NgForm} from "@angular/forms";
-import {isUndefined} from "util";
 
 @Component({
   selector: 'app-listar-entradas',

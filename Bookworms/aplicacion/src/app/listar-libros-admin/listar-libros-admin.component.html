@@ -17,6 +17,7 @@
       <div class="col-sm-7" style="padding-top: 100px">
         <p style="text-decoration-style: double">Autor: {{libro.autorLibro}}</p>
         <p>Número de Páginas: {{libro.numeroPaginas}}</p>
+        <p>Precio:{{libro.precioLibro}}</p>
         <p>Categoría: {{libro.categoriaLibro}}</p>
         <a [routerLink]="[libro.id,'entradas']">Ir a Reseñas</a>
         <br><br>
@@ -53,6 +54,12 @@
                 <input required type="number" class="form-control" placeholder="Ingrese numero de paginas" name="numeroPaginas"
                        [(ngModel)]="libro.numeroPaginas" #fechaCreacion="ngModel" #nombreElm>
               </div>
+              <div class="form-group">
+                <label>Precio</label>
+                <input required type="number" class="form-control" placeholder="Ingrese precio" name="precioLibro"
+                       [(ngModel)]="libro.precioLibro" #precioLibro="ngModel" #nombreElm>
+              </div>
+
               <div class="form-group">
                 <label>Tipo de Lectura</label>
                 <select required type="text" class="form-control" placeholder="Seleccione" name="categoriaLibro"

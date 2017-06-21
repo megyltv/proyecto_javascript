@@ -14,6 +14,9 @@
 
   <div class="row text-center" style="padding-bottom: 20px">
     <img src="{{libro.imagenLibro}}" alt="" height="250">
+    <br>
+    <br>
+    <button type="button" class="comprar btn" [routerLink]="['/home',libro.id,'comprar']">Comprar</button>
   </div>
 
   <p>{{description}}</p>

@@ -31,7 +31,7 @@ export class NuevaEntradaComponent implements OnInit {
       this._parametros=parametros;
       console.log(parametros);
       this._http.get(this._masterUrl.url+'Libro/'+this._parametros.idLibro).subscribe(
-        (res)=>{
+        (res: Response)=>{
           this.libro=res.json();
           console.log(this.libro);
         },

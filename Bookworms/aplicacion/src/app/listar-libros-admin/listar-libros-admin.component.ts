@@ -54,6 +54,7 @@ export class ListarLibrosAdminComponent implements OnInit {
       imagenLibro:libro.imagenLibro,
       autorLibro: libro.autorLibro,
       numeroPaginas: libro.numeroPaginas,
+      precioLibro:libro.precioLibro,
       fechaCreacion: libro.fechaCreacion,
       categoriaLibro: libro.categoriaLibro,
       sinopsisLibro: libro.sinopsisLibro

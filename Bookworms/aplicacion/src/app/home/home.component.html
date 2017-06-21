@@ -36,6 +36,8 @@
       <br>
       <div class="col-sm-5">
         <img [src]="libro.imagenLibro" alt="libro" height="200">
+        <br>
+        <p>Precio: {{libro.precioLibro}}</p>
       </div>
       <div class="col-sm-7" style="padding-top: 50px">
         <p style="text-decoration-style: double">Nombre: {{libro.nombreLibro}}</p>
@@ -44,6 +46,9 @@
         <a [routerLink]="[libro.id,'entradas']">Ir a Reseñas</a>
         <br>
         <a [routerLink]="[libro.id,'frases']">Ir a Frases</a>
+        <br><br>
+
+        <button type="button" class="comprar btn" [routerLink]="[libro.id,'comprarLibro']">Comprar</button>
         <br><br>
       </div>
     </div>

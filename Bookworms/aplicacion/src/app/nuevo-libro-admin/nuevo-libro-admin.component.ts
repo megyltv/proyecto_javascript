@@ -34,6 +34,7 @@ export class NuevoLibroAdminComponent implements OnInit {
       imagenLibro:formulario.value.imagenLibro,
       autorLibro: formulario.value.autorLibro,
       numeroPaginas: formulario.value.numeroPaginas,
+      precioLibro: formulario.value.precioLibro,
       fechaCreacion: new Date(),
       categoriaLibro: formulario.value.categoriaLibro,
       sinopsisLibro: formulario.value.sinopsisLibro
