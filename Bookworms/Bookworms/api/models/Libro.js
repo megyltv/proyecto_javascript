@@ -19,6 +19,10 @@ module.exports = {
     frases:{
       collection:'Frases',
       via:'idLibro'
+    },
+    comprar:{
+      collection:'Compra',
+      via:'idLibro'
     }
   }
 };

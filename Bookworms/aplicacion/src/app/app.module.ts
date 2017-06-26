@@ -15,6 +15,7 @@ import {MasterUrlService} from "./services/master-url.service";
 import {routing} from "./app.routes";
 import { ListarEntradasAdminComponent } from './listar-entradas-admin/listar-entradas-admin.component';
 import { ComprarComponent } from './comprar/comprar.component';
+import { CompradoresAdminComponent } from './compradores-admin/compradores-admin.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ComprarComponent } from './comprar/comprar.component';
     NuevaFraseComponent,
     ListarFrasesComponent,
     ListarEntradasAdminComponent,
-    ComprarComponent
+    ComprarComponent,
+    CompradoresAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+<div class="container">
+  <h2>{{title}}</h2>
+  <div class="container">
+    <div class="row">
+      <p>{{descripcion}}</p>
+      <div class="col-sm-12 borde" *ngFor="let comprador of compradores">
+        <br>
+        <div class="col-sm-7">
+          <h5><b>Nombre Comprador: </b></h5> {{comprador.nombreTitular}}
+          <br>
+        </div>
+        <br><br>
+        <div class="row">
+          <button class="btn btn-danger" (click)="borrarComprador(comprador.id)">
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-warning" [routerLink]="['/administrador']">Regresar</button>
+  </div>
+</div>

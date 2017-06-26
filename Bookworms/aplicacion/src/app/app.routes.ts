@@ -9,6 +9,8 @@ import {NuevaEntradaComponent} from "./nueva-entrada/nueva-entrada.component";
 import {NuevaFraseComponent} from "./nueva-frase/nueva-frase.component";
 import {ListarEntradasAdminComponent} from "./listar-entradas-admin/listar-entradas-admin.component";
 import {ComprarComponent} from "./comprar/comprar.component";
+import {CompradoresAdminComponent} from "./compradores-admin/compradores-admin.component";
+
 
 export const routes: Routes=[
   {path:'',redirectTo:'home',pathMatch:'full'},
@@ -21,6 +23,7 @@ export const routes: Routes=[
   {path:'home/:idLibro/entradas/:idLibro/crearEntrada',component:NuevaEntradaComponent},
   {path:'home/:idLibro/frases/:idLibro/crearFrase',component:NuevaFraseComponent},
   {path:'administrador/:idLibro/entradas',component:ListarEntradasAdminComponent},
-  {path:'home/:idLibro/comprarLibro',component:ComprarComponent}
+  {path:'home/:idLibro/comprarLibro',component:ComprarComponent},
+  {path:'administrador/:idLibro/compradores',component:CompradoresAdminComponent}
 ];
 export const routing:ModuleWithProviders=RouterModule.forRoot(routes);
